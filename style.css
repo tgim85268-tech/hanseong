@@ -1,4 +1,4 @@
-/* 기본 body 스타일 + 화면 중앙 정렬 */
+/* 기본 스타일 */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -7,100 +7,251 @@ body {
   color: #111111;
 }
 
-/* 헤더 */
+/* 헤더 스타일 */
 header {
-  width: 100%;
-  padding: 15px 20px;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 56px;             /* 헤더 높이 */
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
   z-index: 1000;
 }
 
+/* 로고 이미지와 텍스트 정렬 */
 header .logo {
-  font-size: 1.5rem;
   font-weight: bold;
-  color: #111111;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 이미지와 텍스트 사이 간격 */
+}
+
+header .logo img {
+  height: 40px; /* 원하는 크기로 조절 */
+  width: auto;
+  display: block;
 }
 
 header nav ul {
-  display: flex;
-  list-style: none;
   margin: 0;
   padding: 0;
-}
-
-header nav ul li {
-  margin-left: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 header nav ul li a {
   text-decoration: none;
-  color: #111111;
+  color: #333;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-  color: #007BFF;
+  color: #073b71; /* 파란색으로 강조 */
+  text-decoration: underline;
 }
 
-/* 메인 배너 영역 */
+/* 햄버거 메뉴 (간단히 표시만) */
+.hamburger {
+  display: none; /* 필요시 미디어 쿼리로 활성화 */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* 메인 컨텐츠 (hero) */
 .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* 화면 전체 높이 */
-  background-color: #f7f7f7; /* 연한 회색 배경 */
-  text-align: center;
-  padding-top: 70px; /* 헤더 높이만큼 */
-}
-
-.container {
+  padding-top: 56px; /* 헤더 높이와 맞춰서 겹침 방지 */
   max-width: 700px;
-  padding: 0 20px;
-  animation: fadeUp 0.8s ease-out;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-h1 {
+.hero h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
-p {
+.hero p {
   font-size: 1.2rem;
   color: #555;
+}
+
+/* 병원 소개 */
+.about {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* 진료과 / 서비스 */
+.services {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  margin: 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* 의료진 소개 */
+.doctors {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.doctors h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.doctor-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.doctor-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.doctor-card p {
+  margin: 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* 문의 / 예약 */
+.contact {
+  max-width: 700px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
-/* 버튼 */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+.contact p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+.contact button {
+  background-color: #073b71;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* 애니메이션 */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
+.contact button:hover {
+  background-color: #05508b;
+}
+
+/* 반응형: 화면 폭 768px 이하 */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    display: none; /* 햄버거 메뉴 클릭시 보이도록 JS로 조절 가능 */
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  header nav ul li {
+    text-align: center;
+  }
+
+  .hero {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .service-grid,
+  .doctor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }

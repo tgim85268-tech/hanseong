@@ -2,27 +2,86 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>Hanseong</title>
+  <title>한성종합병원ㅣHANSEONG</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- 헤더 -->
   <header>
-    <div class="logo">Hanseong</div>
+    <div class="logo">
+      <img src="images/logo.png" alt="한성종합병원 로고" />
+      한성종합병원ㅣHANSEONG
+    </div>
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Doctors</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
-  <!-- 메인 컨텐츠 -->
-  <div class="container">
-    <h1>Hanseong</h1>
-    <p>웹 개발과 개인 프로젝트를 기록합니다.</p>
-  </div>
+  <!-- Hero 배너 -->
+  <section class="hero">
+    <h1>한성종합병원ㅣHANSEONG</h1>
+    <p>공정함이 신뢰를 만든다.</p>
+  </section>
+
+  <!-- 병원 소개 -->
+  <section class="about">
+    <h2>병원 소개</h2>
+    <p>Hanseong 병원은 최신 시설과 전문 의료진을 갖춘 신뢰할 수 있는 병원입니다.</p>
+  </section>
+
+  <!-- 진료과 / 서비스 -->
+  <section class="services">
+    <h2>진료과</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>내과</h3>
+        <p>일반 건강검진 및 내과 진료</p>
+      </div>
+      <div class="service-card">
+        <h3>외과</h3>
+        <p>수술 및 응급 진료</p>
+      </div>
+      <div class="service-card">
+        <h3>치과</h3>
+        <p>치아 진료 및 예방 관리</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 의료진 소개 -->
+  <section class="doctors">
+    <h2>의료진 소개</h2>
+    <div class="doctor-grid">
+      <div class="doctor-card">
+        <h3>홍길동</h3>
+        <p>내과 전문의</p>
+      </div>
+      <div class="doctor-card">
+        <h3>김철수</h3>
+        <p>외과 전문의</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 / 예약 -->
+  <section class="contact">
+    <h2>문의 / 예약</h2>
+    <p>전화: 010-1234-5678</p>
+    <button>예약하기</button>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
